@@ -5,11 +5,7 @@ import './style.css'
 
 
 function Profile(location) {
-
-   
-    useEffect(() => {
-
-        var button = document.querySelector('button')
+     var button = document.querySelector('button')
         if (button !== null) {
             button.onclick = () => {
                 window.print();
@@ -18,31 +14,25 @@ function Profile(location) {
                 location.assign("index2.html")
             }
         }
-
-
-
-
-
-    }, [])
-    // function chooseFile(fileInput) {
+    function chooseFile(fileInput) {
      
-    //     if (fileInput.files && fileInput.files[0]) {
-    //         var reader = new FileReader();
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
     
-    //         reader.onload = function (event) {
-    //             $('#image').attr('src', event.target.result);
-    //         }
-    //         reader.readAsDataURL(fileInput.files[0]);
-    //     }
-    // }
+            reader.onload = function (event) {
+                $('#image').attr('src', event.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
 
     return (
         <div>
             <div class="print-area">
                 <div class="header">
-                    <form action="">
+                    <form action="post" method='post'>
                         <img src="./images/ezra.jpg" id="image" />
-                        <input type="file" name="" class="custom-file-input" id="imageFile"
+                        <input onChange='$chooseFile(this)' type="file" name="" class="custom-file-input" id="imageFile"
                             accept="image/gif , image/jpeg , image/png" />
                         
                     </form>

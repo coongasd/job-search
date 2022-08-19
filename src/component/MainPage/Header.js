@@ -9,11 +9,11 @@ function Header() {
     setIsOpen(!isOpen);
   }
   return (
-   <div className="sticky border-2 border-b-amber-600 z-50">
-        <nav className='flex flex-row justify-between items-center'>
+   <div className="sticky z-50">
+        <nav className='flex flex-row justify-between items-center h-16'>
             <div className="Logo basis-1/6 justify-start">
               <a href="/">
-                <img  alt="Job Search ứng dụng tìm việc" src="images/logo.svg"></img>
+                <img className='img-responsive h-16' alt="Job Search ứng dụng tìm việc" src="images/logo.svg"></img>
               </a>
             </div>
             <ul className="basis-4/6 flex items-center justify-center gap-8 font-medium">
