@@ -1,18 +1,12 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery'
 import './style.css'
+
+
+
 function Profile(location) {
 
-    function chooseFile(fileInput) {
-        if (fileInput.files && fileInput.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (event) {
-                $('#image').attr('src', event.target.result);
-            }
-            reader.readAsDataURL(fileInput.files[0]);
-        }
-    }
+   
     useEffect(() => {
 
         var button = document.querySelector('button')
@@ -30,7 +24,17 @@ function Profile(location) {
 
 
     }, [])
-
+    // function chooseFile(fileInput) {
+     
+    //     if (fileInput.files && fileInput.files[0]) {
+    //         var reader = new FileReader();
+    
+    //         reader.onload = function (event) {
+    //             $('#image').attr('src', event.target.result);
+    //         }
+    //         reader.readAsDataURL(fileInput.files[0]);
+    //     }
+    // }
 
     return (
         <div>
@@ -38,8 +42,9 @@ function Profile(location) {
                 <div class="header">
                     <form action="">
                         <img src="./images/ezra.jpg" id="image" />
-                        <input onChange={chooseFile(this)} type="file" name="" class="custom-file-input" id="imageFile"
+                        <input type="file" name="" class="custom-file-input" id="imageFile"
                             accept="image/gif , image/jpeg , image/png" />
+                        
                     </form>
                     <div class="header-text">
                         <h1> Ezra Miler</h1>

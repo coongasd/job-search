@@ -32,7 +32,17 @@
 .App-link {
   color: #61dafb;
 }
-
+.slick-next{
+  right: 0 !important;
+  top: 0 !important;
+}
+.slick-prev{
+  top: 0 !important;
+  left:-249px !important;
+}
+.slick-dots{
+  display:none !important;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

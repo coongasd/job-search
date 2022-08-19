@@ -5,10 +5,12 @@ import TopCategory from './TopCategory';
 
 function MainPage() {
   return (
-    <div className="content-wraper max-w-6xl text-base mx-auto px-8 relative">
+    <div className="content-wraper max-w-6xl text-base mx-auto relative">
         <Header />
         <BoxSearch/>
         <TopCategory/>
+     
+       
     </div>
    
   )

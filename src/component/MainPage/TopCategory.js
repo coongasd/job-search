@@ -7,12 +7,12 @@ import Slider from "react-slick";
 
 function TopCategory() {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
-        speed: 500,
+        speed: 1500,
         slidesToShow: 1,
-        slidesToScroll: 1
-  
+        slidesToScroll: 1,
+        autoplay:true
       };
   return (
     <div className='container'>
@@ -43,7 +43,7 @@ function TopCategory() {
                                     </div>
                                     <div className='text'>
                                         <h1 className='name-category font-bold'>Bất động sản</h1>
-                                        <p className='count-category text-slate-700'>236 việc làm</p>
+                                        <h1 className='count-category text-slate-700'>236 việc làm</h1>
                                     </div>
                                 </div>
 
