@@ -9,14 +9,14 @@ function Header() {
     setIsOpen(!isOpen);
   }
   return (
-   <div className="sticky z-50">
+   <div className="fixed bg-white w-full z-50">
         <nav className='flex flex-row justify-between items-center h-16'>
             <div className="Logo basis-1/6 justify-start">
               <a href="/">
                 <img className='img-responsive h-16' alt="Job Search ứng dụng tìm việc" src="images/logo.svg"></img>
               </a>
             </div>
-            <ul className="basis-4/6 flex items-center justify-center gap-8 font-medium">
+            <ul className="basis-4/6 flex items-center justify-start gap-8 font-medium">
               <li id="menu-bar" >
                 <a className='cursor-pointer py-1 relative hover:text-amber-600 after:absolute 
               after:left-0 after:bottom-0 after:h-0.5 after:bg-amber-400 hover:after:w-full after:transition-all after:ease-in-out after:duration-300'  onMouseEnter={toggle}>
@@ -91,7 +91,7 @@ function Header() {
                 } */}
               </li>
             </ul>
-            <ul className="basis-1/6 flex items-center gap-8 justify-end mr-5">
+            <ul className="basis-1/6 flex items-center gap-8 justify-start mr-5">
               <li id="nav-notification" className="navbar-right__item icon dropdown notification">
                 <a href="javascript:void(0)" className="text-amber-600 text-xl">
                  <li className='fa fa-bell noti-icon'></li>

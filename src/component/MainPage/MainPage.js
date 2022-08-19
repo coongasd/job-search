@@ -6,7 +6,7 @@ import TopCategory from './TopCategory';
 
 function MainPage() {
   return (
-    <div className="content-wraper max-w-7xl text-base mx-auto relative">
+    <div className="content-wraper  text-base mx-auto relative">
         <Header />
         <BoxSearch/>
         <TopCategory/>

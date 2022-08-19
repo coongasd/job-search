@@ -3,7 +3,7 @@ import React from 'react'
 function BoxSearch() {
   return (
     <div id='box-search-job' className='z-1'>
-        <h1 className='text-amber-600 text-2xl font-bold text-start py-5'>Tìm kiếm việc làm phù hợp</h1>
+        <h1 className='text-amber-600 text-2xl font-bold text-start py-16 ml-10'>Tìm kiếm việc làm phù hợp</h1>
         <div className='mt-5'>
             <div className="flex justify-center">
                 <div className=''>

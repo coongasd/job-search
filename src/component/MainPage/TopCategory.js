@@ -18,7 +18,7 @@ function TopCategory() {
     <div className='container'>
         <div className='row-auto'>
             <div className='col-md-12'>
-                <h2 className='text-amber-600 text-xl font-bold text-start py-5'>Top ngành nghề nổi bật</h2>
+                <h2 className='text-amber-600 text-xl font-bold text-start py-5 ml-10'>Top ngành nghề nổi bật</h2>
                 <div className='row-auto center-category-top-professions transition slick-initialized slick-slider slick-dotted'>
                     <Slider {...settings}>
                         <div className="">

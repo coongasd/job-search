@@ -33,12 +33,12 @@
   color: #61dafb;
 }
 .slick-next{
-  right: 0 !important;
+  right: 200px !important;
   top: 0 !important;
 }
 .slick-prev{
   top: 0 !important;
-  left:-249px !important;
+  left:-49px !important;
 }
 .slick-dots{
   display:none !important;
