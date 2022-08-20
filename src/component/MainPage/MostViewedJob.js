@@ -2,10 +2,10 @@ import React from 'react'
 
 function MostViewedJob() {
   return (
-    <div className='container'>
+    <div style={{ backgroundImage: 'url(https://www.topcv.vn/v4/image/welcome/linear_web.png)'}} className='container '>
         <div className='ml-20 mr-20'>
             <h2 className='text-amber-600 text-xl font-bold text-center py-5'>Các công việc được quan tâm nhất</h2>
-            <div className='list-job-box'>
+            <div className='list-job-box  w-2/3 m-auto'>
                 <div className='single-job text-left p-5 border-2 rounded '>
                     <a href="#" className='text-amber-500'>Thiết kế website máy ảnh, phụ kiện máy ảnh</a>
                     <p className='ml-5 mt-1'>Minh Nhật</p>

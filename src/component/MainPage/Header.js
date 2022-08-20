@@ -9,7 +9,7 @@ function Header() {
     setIsOpen(!isOpen);
   }
   return (
-   <div className="fixed bg-white w-full z-50">
+   <div className="fixed bg-white w-full z-50 border">
         <nav className='flex flex-row justify-between items-center h-16'>
             <div className="Logo basis-1/6 justify-start">
               <a href="/">

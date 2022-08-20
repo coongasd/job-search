@@ -2,7 +2,7 @@ import React from 'react'
 
 function BoxSearch() {
   return (
-    <div id='box-search-job' className='z-1'>
+    <div style={{ backgroundImage: 'url(https://www.topcv.vn/v4/image/welcome/linear_web.png)'}} id='box-search-job' className='z-1'>
         <h1 className='text-amber-600 text-2xl font-bold text-start py-16 ml-10'>Tìm kiếm việc làm phù hợp</h1>
         <div className='mt-5'>
             <div className="flex justify-center">
@@ -14,7 +14,7 @@ function BoxSearch() {
                                     <span className="input-icon mr-2">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </span>
-                                    <input className='w-72 p-2 focus:outline-none' placeholder='Tên công việc, vị trí muốn ứng tuyển' type="text"/>
+                                    <input className='w-72 p-2 focus:outline-none bg-transparent' placeholder='Tên công việc, vị trí muốn ứng tuyển' type="text"/>
                                 </div>
                                 <div class="mt-5 col-button w-full">
                                     <button className='btn rounded p-3 font-bold text-lime-50 bg-amber-600' type='submit'>Tìm việc ngay</button>
