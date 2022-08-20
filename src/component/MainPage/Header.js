@@ -13,7 +13,7 @@ function Header() {
         <nav className='flex flex-row justify-between items-center h-16'>
             <div className="Logo basis-1/6 justify-start">
               <a href="/">
-                <img className='img-responsive h-16' alt="Job Search ứng dụng tìm việc" src="images/logo.svg"></img>
+                <img className='w-1/2 h-16' alt="Job Search ứng dụng tìm việc" src="images/logo.png"></img>
               </a>
             </div>
             <ul className="basis-4/6 flex items-center justify-start gap-8 font-medium">
