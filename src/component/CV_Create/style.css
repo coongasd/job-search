@@ -117,11 +117,6 @@ nav {
     height: 390px;
 }
 
-.container {
-    min-height: 1200px;
-    background-color: #333333;
-}
-
 .wrapper {
     display: flex;
     justify-content: center;
@@ -191,3 +186,6 @@ nav {
     box-shadow: 0 0 #333;
 }
 
+.container {
+    margin: auto;
+}

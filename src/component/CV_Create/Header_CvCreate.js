@@ -41,8 +41,8 @@ function Header_CvCreate () {
                 </div>
                 <div >
                     <ul class="nav_links">
-                        <li><a href="#">Công ty</a></li>
-                        <li><a href="#">Công cụ</a></li>
+                        <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
+                        <li><a href="#"><img src="images/admin.jpg" alt="logo"></img></a></li>
                     </ul>
                 </div>
            </nav>
