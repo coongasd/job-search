@@ -1,4 +1,13 @@
-const Create_CV = () => {
-    <h1>Hello ae</h1>
+import React, {useState}from "react";
+import Header_CvCreate from "./Header_CvCreate";
+
+
+
+function CV_Create () {
+    return (
+        <Header_CvCreate />
+    )
 }
-export default Create_CV
+        
+
+export default CV_Create;
