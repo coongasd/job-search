@@ -7,20 +7,13 @@ import Profile from './component/CV_Profile/Profile'
 import {Routes, Route, Link, NavLink } from "react-router-dom";
 import Register from './component/Register_Login/RegisterPage';
 import Login from './component/Register_Login/LoginPage';
-
+import CV_Create from './component/CV_Create';
 function App() {
   return (
       
       <div className="App">
-        <Routes>
-          <Route path="/profile" element={<Profile/>}/> 
-          <Route path="/register" element={<Register/>}/>  
-          <Route path="/login" element={<Login/>}/> 
-          <Route path="/" element={<MainPage/>}/>  
-        </Routes>
+       
       </div>
-   
-   
   );
 }
 
