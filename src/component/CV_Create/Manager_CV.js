@@ -46,10 +46,18 @@ function Manager_CV () {
         <div class="Manager_CV_BoxRight">
             <div class="Manager_CV_BoxTop">
                 <div class="BoxTop_Avatar">
-                    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA"></img>
+                    <a>Cập nhật ảnh</a>
                 </div>
+               
                 <div class="BoxTop_Text_Button">
-                    
+                    <p>Chào mừng trở lại</p>
+                    <h1>Hacker ẩn danh</h1>
+                    <p>Tài khoản chưa được xác thực</p>
+                    <button class="BoxRight_Button">Nâng cấp tài khoản</button>
+                </div>
+                <div class="BoxRight_CheckBox">
+                    <input type={'checkbox'} />
                 </div>
             </div>
             <div class="Manager_CV_BoxBottom">

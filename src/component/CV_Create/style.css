@@ -108,7 +108,7 @@ nav {
    position: absolute;
    min-width: 400px;
    top: 75px;
-   left: 435px;
+   left: 395px;
    border-top-right-radius: 5px;
 }
 
@@ -207,7 +207,7 @@ nav {
 .Manager_CV_Container .Manager_CV_BoxRight{
     height: 500px;
     width: 350px;
-    background: #3c4b43;
+    background: #fff;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
@@ -238,7 +238,6 @@ nav {
 }
 
 .Manager_CV_Items .Text_Button h1 {
-    display: block;
     padding: 20px 0;
     font-size: 20px;
     font-weight: bold;
@@ -252,6 +251,10 @@ nav {
     border-radius: 32px;
     background-color: #00b14f;
     margin-top: 20px;
+}
+
+.Manager_CV_Items .Text_Button button:hover {
+    background-color: #4fc986;
 }
 
 .Manager_CV_Items .Text_Image {
@@ -268,10 +271,63 @@ nav {
 
 
 .Manager_CV_BoxRight .Manager_CV_BoxTop {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
 }
 
 .Manager_CV_BoxRight .Manager_CV_BoxBottom {
     
     
+}
+
+.Manager_CV_BoxTop .BoxTop_Avatar {
+    padding: 15px 15px;
+}
+.Manager_CV_BoxTop .BoxTop_Avatar img {
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+}
+.Manager_CV_BoxTop a{
+    position: absolute;
+    left: 8px;
+    top: 95px;
+    width: 100px;
+    padding-top:10px ;
+    display: block;
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Manager_CV_BoxTop .BoxTop_Text_Button {
+    position: absolute;
+    color:rgb(0, 0, 0);
+    padding: 15px;
+    top: 8px;
+    left: 100px;
+}
+
+.BoxTop_Text_Button h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Manager_CV_BoxTop .BoxRight_Button {
+    width: 135px;
+    margin: 15px;
+    font-size: 10px;
+    font-weight: 100;
+    background-color: #00b14f;
+}
+
+.Manager_CV_BoxTop .BoxRight_Button:hover {
+    background-color: #4fc986;
+}
+
+.Manager_CV_BoxTop .BoxRight_CheckBox {
+    background-color: #333;
+    margin-top:50px ;
 }
