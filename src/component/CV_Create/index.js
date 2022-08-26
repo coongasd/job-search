@@ -1,12 +1,17 @@
-import React, {useState}from "react";
 import Header_CvCreate from "./Header_CvCreate";
+import Manager_CV from "./Manager_CV";
 
 
 
 function CV_Create () {
     return (
-        <Header_CvCreate />
+        <div>
+            <Header_CvCreate />,
+            <Manager_CV />
+        </div>
+        
     )
+
 }
         
 
