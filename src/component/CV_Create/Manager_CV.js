@@ -57,7 +57,31 @@ function Manager_CV () {
                     <button class="BoxRight_Button">Nâng cấp tài khoản</button>
                 </div>
                 <div class="BoxRight_CheckBox">
-                    <input type={'checkbox'} />
+                    <div>
+                        <input type={'checkbox'} class="check" />
+                        <p class="checkbox_text">Trạng thái tìm kiếm việc làm</p>
+                    </div>
+                    <div class="text_dicription">
+                        <p>Bật tìm việc để nhận được nhiều cơ hội việc làm tốt nhất từ Job Search.</p>
+                    </div>
+                    
+                </div>
+
+                <div class="BoxRight_CheckBox">
+                    <div>
+                        <input type={'checkbox'} class="check" />
+                        <p class="checkbox_text">Cho phép NTD liên hệ bạn qua</p>
+                    </div>
+                    <div class="text_dicription">
+                        <p>Bật để cho phép các đơn vị tuyển dụng uy tín, 
+                            Headhunter đã được Job search xác thực xem CV Online của bạn.
+                        </p>
+
+                        <p style={{color: "red", padding: '20px 0'}} >Khởi tạo TopCV Profile để gia tăng 300% cơ hội việc làm tốt
+                        </p>
+
+                        <button style={{position: 'absolute', left:'-14px', width: '275px'}} class="BoxRight_Button">Tạo JobSearch Profile</button>
+                    </div>
                 </div>
             </div>
             <div class="Manager_CV_BoxBottom">
