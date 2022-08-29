@@ -403,7 +403,7 @@ input[type='checkbox']:checked::after {
    
 }
 
-.BoxRight_CheckBox .text_dicription {
+.BoxRight_CheckBox .text_description {
     position: absolute;
     left: 10px;
     width: 300px;
@@ -412,4 +412,101 @@ input[type='checkbox']:checked::after {
     font-weight: 300;
     top: 40px;
     text-align: left;
+}
+
+.Manager_CV_Items_Company {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: -3px 3px 10px #333;
+    text-align: left;
+    padding: 16px 16px;
+}
+
+.Manager_CV_Items_Company h1 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 20px;
+    padding: initial;
+}
+
+.Manager_CV_Items_Company a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 20px;
+    padding: initial;
+    color: #00b14f;
+}
+
+.Manager_CV_Items_Company p {
+    font-size: 14px;
+}
+
+
+.Manager_CV_Items_Company .Company_Items{
+    display: flex;
+    flex-direction: column ;
+    background: #f2fbf6;
+    padding: 16px 0;
+    margin: 14px 0;
+}
+
+.Company_Items .Company_Description {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.Company_Items .Company_Description img {
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+}
+
+.Company_Items .Company_Description a {
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.Company_Items .Company_Description a:nth-child(2) {
+    font-size: 14px;
+    color: #666;
+}
+
+.Company_Items .Company_Description p {
+    padding-left: 10px;
+}
+
+.Company_Description .Company_Link {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.Company_Items .Company_State {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Company_Items .Company_State p {
+    background: #eee;
+    border-radius: 3px;
+    color: #636d78;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin-right: 10px;
+    padding: 4px 8px;
 }
