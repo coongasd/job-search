@@ -1,7 +1,9 @@
 import React from "react"
+import { FaGift, FaLongArrowAltUp } from "react-icons/fa";
+
 import './style.css'
 
-function Header_CvCreate () {
+function Header_CvCreate () {   
     return (
         <div class="wrappar">
         <header>
@@ -74,7 +76,56 @@ function Header_CvCreate () {
                 <div >
                     <ul class="nav_links">
                         <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
-                        <li><a href="#"><img src="images/admin.jpg" alt="logo"></img></a></li>
+                        <li class="nav_links_image name_user">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA" alt="logo"></img>
+                            <p>Ẩn Danh</p>
+                            <div class="subnav">
+                                <div>
+                                    <ul class="subnav_list_avatar">
+                                        <div>
+                                            <li class="items_icons_text">
+                                                <FaLongArrowAltUp display={'block'}></FaLongArrowAltUp>
+                                                <p>Nâng cấp tài khoản vip</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Kích hoạt quà tặng</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Nhà tuyển dụng xem hồ sơ</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Cài đặt gợi ý việc làm</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Cài đặt nhận Email</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Cài đặt bảo mật</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Đổi mật khẩu</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p style={{color:'red'}}>Đăng xuất</p>
+                                            </li>
+                                        </div>
+                                      
+                                    </ul>
+        
+                                </div>
+                                <div class="subnav_img">
+                                   
+                                </div>
+                            </div>
+                        </li>
+                        
                     </ul>
                 </div>
            </nav>
