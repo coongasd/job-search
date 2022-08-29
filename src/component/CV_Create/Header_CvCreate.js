@@ -21,9 +21,27 @@ function Header_CvCreate () {
                 <div >
                     <ul class="nav_links">
                         <li><a href="#"><img src="images/logo.png" alt="logo"></img></a></li>
-                        <li><a href="#">Việc làm</a></li>
                         <li>
-                            <a href="#">Hồ sơ & CV</a>
+                            <a href="/">Việc làm</a>
+                            <div class="subnav">
+                                <div>
+                                    <ul class="subnav_list">
+                                        <li>Tìm việc làm</li>
+                                        <li>Việc làm đã ứng tuyển</li>
+                                        <li>Việc làm đã lưu</li>
+                                        <li>Việc làm phủ hợp</li>
+                                        <li>Việc làm từ xa</li>
+                                        <li>Việc là IT</li>
+                                        <li>Việc làm senior</li>
+                                    </ul>
+                                </div>
+                                <div class="subnav_img">
+                                    <img src="https://www.topcv.vn/v4/image/nav-job.png?v=1.0.0" alt=""></img>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/cv_create">Hồ sơ & CV</a>
                             <div class="subnav">
                                 <div>
                                     <ul class="subnav_list">
@@ -42,7 +60,21 @@ function Header_CvCreate () {
                                 </div>
                             </div>
                         </li>
-                        <li><a href="#">Công ty</a></li>
+                        <li>
+                            <a href="#">Công ty</a>
+                            <div class="subnav">
+                                <div>
+                                    <ul class="subnav_list">
+                                        <li>Danh sách công ty</li>
+                                        <li>Top công ty</li>   
+                                    </ul>
+        
+                                </div>
+                                <div class="subnav_img">
+                                   
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="#">Phát triển sự nghiệp</a></li>
                         <li><a href="#">Công cụ</a></li>
                     </ul>

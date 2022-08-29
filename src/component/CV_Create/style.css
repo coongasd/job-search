@@ -108,7 +108,7 @@ nav {
    position: absolute;
    min-width: 400px;
    top: 75px;
-   left: 435px;
+   left: 395px;
    border-top-right-radius: 5px;
 }
 
@@ -188,4 +188,325 @@ nav {
 
 .container {
     margin: auto;
+}
+
+/*------------------------------------------Manager_CV CSS--------------------------------------------------*/
+.Manager_CV_Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.Manager_CV_Container .Manager_CV_BoxLeft {
+    width:700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Manager_CV_Container .Manager_CV_BoxRight{
+    height: 500px;
+    width: 350px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.Manager_CV_Items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 250px;
+    background-color: #fff;
+    box-shadow: -3px 3px 10px #333;
+}
+
+
+.Manager_CV_Items .Banner_Image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.Manager_CV_Items .Text_Button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 75px;
+}
+
+.Manager_CV_Items .Text_Button h1 {
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color:#333;
+}
+
+.Manager_CV_Items .Text_Button button {
+    
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 32px;
+    background-color: #00b14f;
+    margin-top: 20px;
+}
+
+.Manager_CV_Items .Text_Button button:hover {
+    background-color: #4fc986;
+}
+
+.Manager_CV_Items .Text_Image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Manager_CV_Items .Text_Image p {
+    color: #333;
+    margin-top: 20px;
+}
+
+
+.Manager_CV_BoxRight .Manager_CV_BoxTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.Manager_CV_BoxRight .Manager_CV_BoxBottom {
+    
+    
+}
+
+.Manager_CV_BoxTop .BoxTop_Avatar {
+    padding: 15px 15px;
+}
+.Manager_CV_BoxTop .BoxTop_Avatar img {
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+}
+.Manager_CV_BoxTop a{
+    position: absolute;
+    left: 8px;
+    top: 95px;
+    width: 100px;
+    padding-top:10px ;
+    display: block;
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Manager_CV_BoxTop .BoxTop_Text_Button {
+    position: absolute;
+    color:rgb(0, 0, 0);
+    padding: 15px;
+    top: 8px;
+    left: 100px;
+}
+
+.BoxTop_Text_Button h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Manager_CV_BoxTop .BoxRight_Button {
+    width: 135px;
+    margin: 15px;
+    font-size: 10px;
+    font-weight: 100;
+    background-color: #00b14f;
+}
+
+.Manager_CV_BoxTop .BoxRight_Button:hover {
+    background-color: #4fc986;
+}
+
+.Manager_CV_BoxTop .BoxRight_CheckBox {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 50px;
+    width: 5px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+
+}
+
+input[type='checkbox'] {
+   position: absolute;
+   left: 8px;
+   -webkit-appearance: none;
+}
+
+.BoxRight_CheckBox .check {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #092c3e;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+
+input[type='checkbox']:checked {
+    background: #68df9d;
+}
+
+.BoxRight_CheckBox .check::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: rgb(247, 0, 0);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type='checkbox']:checked::before {
+    transform: translateX(-50px);
+}
+
+.BoxRight_CheckBox .check::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    background:  #092c3e;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+input[type='checkbox']:checked::after {
+    transform: translateX(0px);
+}
+
+.BoxRight_CheckBox .checkbox_text  {
+   position: absolute;
+   width: 250px;
+   left: 50px;
+   color: red;
+   font-size: 15px;
+   font-weight: 900;
+   
+}
+
+.BoxRight_CheckBox .text_description {
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    color: rgb(61, 58, 58);
+    font-size: 12px;
+    font-weight: 300;
+    top: 40px;
+    text-align: left;
+}
+
+.Manager_CV_Items_Company {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: -3px 3px 10px #333;
+    text-align: left;
+    padding: 16px 16px;
+}
+
+.Manager_CV_Items_Company h1 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 20px;
+    padding: initial;
+}
+
+.Manager_CV_Items_Company a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 20px;
+    padding: initial;
+    color: #00b14f;
+}
+
+.Manager_CV_Items_Company p {
+    font-size: 14px;
+}
+
+
+.Manager_CV_Items_Company .Company_Items{
+    display: flex;
+    flex-direction: column ;
+    background: #f2fbf6;
+    padding: 16px 0;
+    margin: 14px 0;
+}
+
+.Company_Items .Company_Description {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.Company_Items .Company_Description img {
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+}
+
+.Company_Items .Company_Description a {
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.Company_Items .Company_Description a:nth-child(2) {
+    font-size: 14px;
+    color: #666;
+}
+
+.Company_Items .Company_Description p {
+    padding-left: 10px;
+}
+
+.Company_Description .Company_Link {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.Company_Items .Company_State {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Company_Items .Company_State p {
+    background: #eee;
+    border-radius: 3px;
+    color: #636d78;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin-right: 10px;
+    padding: 4px 8px;
 }
