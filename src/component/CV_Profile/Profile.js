@@ -1,10 +1,35 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
 import './style.css'
+import { useDispatch, useSelector } from 'react-redux'
 
-
+import { storage } from '../../firebase';
+import { ref, uploadBytes } from "firebase/storage"
+import {v4 } from 'uuid'
 
 function Profile(location) {
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    console.log(selectedImage)
+    const uploadImageToServer = () => {
+        if(selectedImage == null) return;
+        const imageRef = ref(storage,`images/${selectedImage.name + v4()}`);
+        uploadBytes(imageRef,selectedImage).then(() => {
+            alert("Image Uploaded!");
+        }
+        
+           
+        )
+    }
+    
+    const userLogin = useSelector((state) => state.userLogin );
+    const {userInfo, loading, error} = userLogin;
+    const dispatch = useDispatch();
+    console.log(userInfo)
+     useEffect(() => {
+   
+  },[userInfo])
+ 
      var button = document.querySelector('button')
         if (button !== null) {
             button.onclick = () => {
@@ -14,31 +39,31 @@ function Profile(location) {
                 location.assign("index2.html")
             }
         }
-    function chooseFile(fileInput) {
-     
-        if (fileInput.files && fileInput.files[0]) {
-            var reader = new FileReader();
     
-            reader.onload = function (event) {
-                $('#image').attr('src', event.target.result);
-            }
-            reader.readAsDataURL(fileInput.files[0]);
-        }
-    }
 
     return (
         <div>
             <div class="print-area">
-                <div class="header">
+                <div class="header bg-amber-600">
                     <form action="post" method='post'>
-                        <img src="./images/ezra.jpg" id="image" />
-                        <input onChange='$chooseFile(this)' type="file" name="" class="custom-file-input" id="imageFile"
+                        {selectedImage && (
+                            <> 
+                                <img src={URL.createObjectURL(selectedImage)} id="image" />
+                                <button onClick={()=>setSelectedImage(null)}>Remove</button>
+                                
+                            </>
+                          
+                        )
+                           
+                        }
+                       
+                        <input onChange={(event) => setSelectedImage(event.target.files[0])} type="file" name="" class="custom-file-input" id="imageFile"
                             accept="image/gif , image/jpeg , image/png" />
-                        
+                        {/* <button onClick={uploadImageToServer}>Upload</button> */}
                     </form>
                     <div class="header-text">
-                        <h1> Ezra Miler</h1>
-                        <p>Game Designer & Web Designer</p>
+                        <h1> {userInfo.name}</h1>
+                        <p>{userInfo.usersDetails?.education}</p>
                     </div>
 
                 </div>
@@ -48,47 +73,37 @@ function Profile(location) {
                         <div class="contact">
                             <h4>CONTACT</h4>
                             <h5>Name</h5>
-                            <p>Ezra Miler</p>
+                            <p>{userInfo?.name}</p>
                             <h5>Phone</h5>
-                            <p>+98</p>
+                            <p>{userInfo?.contactNumber}</p>
                             <h5>Email</h5>
-                            <p>@gmail.com</p>
+                            <p>{userInfo?.email}</p>
                         </div>
                         <div class="skills">
                             <h1>SKILLS</h1>
                             <div class="bars">
-                                <div class="bar">
-                                    <p>Photoshop</p>
-                                    <span></span>
-                                </div>
-                                <div class="bar">
-                                    <p>HTML/CSS</p>
-                                    <span></span>
-                                </div>
-                                <div class="bar">
-                                    <p>Javascript</p>
-                                    <span></span>
-                                </div>
-                                <div class="bar">
-                                    <p>PHP</p>
-                                    <span></span>
-                                </div>
-                                <div class="bar">
-                                    <p>SQL Server</p>
-                                    <span></span>
-                                </div>
-                                <div class="bar">
-                                    <p>C++</p>
-                                    <span></span>
-                                </div>
+                                {
+                                    userInfo.usersDetails?.skills.map((skill) => (
+                                        <>
+                                            <div class="bar">
+                                               <p>{skill}</p>
+                                               <span></span>
+                                            </div>  
+                                        </>
+                                    )
+                                    )
+                                        
+                                    
+                                }
+                         
                             </div>
                         </div>
                         <div class="follow">
-                            <h1>FLLOW ME</h1>
+                            <h1>FOLLOW ME</h1>
                             <h4>Facebook</h4>
-                            <p>facebook.com/username</p>
+                            <p>{userInfo.usersDetails?.facebook}</p>
                             <h4>Instagram</h4>
-                            <p>instagram.com/username</p>
+                            <p>{userInfo.usersDetails?.instagram}</p>
                         </div>
                     </div>
                     <div class="right-area">
