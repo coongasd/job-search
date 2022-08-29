@@ -1,5 +1,6 @@
-import React from "react"
-
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../Redux/Action/UserAction";
 import { FaGift, FaLongArrowAltUp } from "react-icons/fa";
 
 import './style.css'
@@ -86,7 +87,7 @@ function Header_CvCreate () {
                         <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
                         <li class="nav_links_image name_user">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA" alt="logo"></img>
-                            <p>Ẩn Danh</p>
+                            <p>{userInfo?.name}</p>
                             <div class="subnav">
                                 <div>
                                     <ul class="subnav_list_avatar">
@@ -121,7 +122,7 @@ function Header_CvCreate () {
                                             </li>
                                             <li class="items_icons_text">
                                                 <FaGift display={'block'}></FaGift>
-                                                <p style={{color:'red'}}>Đăng xuất</p>
+                                                <a onClick={() => dispatch(logout())} href="#"><p style={{color:'red'}}>Đăng xuất</p></a>
                                             </li>
                                         </div>
                                       
@@ -132,13 +133,6 @@ function Header_CvCreate () {
                                    
                                 </div>
                             </div>
-                        </li>
-                        
-                        <li><a onClick={() => dispatch(logout())} href="#"><img src="images/message.png" alt="logo"></img></a></li>
-                        <li>
-                            <a href="/profile"><img src="images/admin.jpg" alt="logo"></img>
-                              <p>{userInfo?.name}</p>
-                            </a>
                         </li>
                     </ul>
                 </div>
