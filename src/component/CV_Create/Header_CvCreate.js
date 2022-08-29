@@ -1,9 +1,17 @@
 import React from "react"
+
 import { FaGift, FaLongArrowAltUp } from "react-icons/fa";
 
 import './style.css'
 
-function Header_CvCreate () {   
+function Header_CvCreate () {
+    const dispatch = useDispatch();
+
+    const userLogin = useSelector((state) => state.userLogin);
+    const {userInfo, loading, error} = userLogin;
+
+
+
     return (
         <div class="wrappar">
         <header>
@@ -126,6 +134,12 @@ function Header_CvCreate () {
                             </div>
                         </li>
                         
+                        <li><a onClick={() => dispatch(logout())} href="#"><img src="images/message.png" alt="logo"></img></a></li>
+                        <li>
+                            <a href="/profile"><img src="images/admin.jpg" alt="logo"></img>
+                              <p>{userInfo?.name}</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
            </nav>
