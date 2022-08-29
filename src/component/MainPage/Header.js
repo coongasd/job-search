@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
 
 function Header() {
-
+ 
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => {
   
     setIsOpen(!isOpen);
   }
+  
   return (
    <div className="fixed bg-white w-full z-50 border">
         <nav className='flex flex-row justify-between items-center h-16'>
