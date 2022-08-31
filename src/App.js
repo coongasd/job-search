@@ -9,12 +9,14 @@ import Register from './component/Register_Login/RegisterPage';
 import Login from './component/Register_Login/LoginPage';
 import FindJob from './component/Job/FindJob';
 import SettingProfile from './component/CV_Profile/SettingProfile';
+import WorkProfile from './component/CV_Profile/UserInfo/WorkProfile';
 
 function App() {
   return (
       
       <div className="App">
         <Routes>
+          <Route path="/profile/setting/workprofile" element={<WorkProfile/>}/> 
           <Route path="/profile/setting" element={<SettingProfile/>}/> 
           <Route path="/profile" element={<Profile/>}/> 
           <Route path="/register" element={<Register/>}/>  

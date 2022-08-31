@@ -62,8 +62,8 @@ function Profile(location) {
                         {/* <button onClick={uploadImageToServer}>Upload</button> */}
                     </form>
                     <div class="header-text">
-                        <h1> {userInfo.name}</h1>
-                        <p>{userInfo.usersDetails?.education}</p>
+                        <h1> {userInfo?.name}</h1>
+                        <p>{userInfo?.usersDetails?.education}</p>
                     </div>
 
                 </div>
@@ -83,7 +83,7 @@ function Profile(location) {
                             <h1>SKILLS</h1>
                             <div class="bars">
                                 {
-                                    userInfo.usersDetails?.skills.map((skill) => (
+                                    userInfo?.usersDetails?.skills.map((skill) => (
                                         <>
                                             <div class="bar">
                                                <p>{skill}</p>
@@ -101,9 +101,9 @@ function Profile(location) {
                         <div class="follow">
                             <h1>FOLLOW ME</h1>
                             <h4>Facebook</h4>
-                            <p>{userInfo.usersDetails?.facebook}</p>
+                            <p>{userInfo?.usersDetails?.facebook}</p>
                             <h4>Instagram</h4>
-                            <p>{userInfo.usersDetails?.instagram}</p>
+                            <p>{userInfo?.usersDetails?.instagram}</p>
                         </div>
                     </div>
                     <div class="right-area">

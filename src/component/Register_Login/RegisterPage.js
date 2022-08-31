@@ -11,14 +11,13 @@ function Register({location}) {
     const [name,setName] = useState("");
    
     const dispatch = useDispatch();
-    
-   
+    const userRegister = useSelector((state) => state.userRegister);
+   const {error} = userRegister
     const redirect = location?.search ? location.search?.split("=")[1] : "/";
     const userLogin = useSelector((state) => state.userLogin);
-   
-   
-    const {userInfo, error, loading} = userLogin;
-    
+ 
+    const {userInfo, loading} = userLogin;
+    console.log(error)
     const registerSubmitHandler = (e) => {
         e.preventDefault();
         if(password !== repeatPassword){
@@ -81,7 +80,8 @@ function Register({location}) {
                         <input  value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)}  className='w-72 p-2 focus:outline-none bg-transparent' name="repeatPassword"  placeholder='Xác nhận mật khẩu' type="password"/>
                     </div>
                     <p>Bằng việc đăng ký tài khoản, bạn đã đồng ý với Điều khoản dịch vụ và Chính sách bảo mật của chúng tôi</p>
-                    {error && (<p>{error}</p>)}
+
+                    {error && <h3 className="text-red-600 mt-5">{error}</h3>}
                     <button type="submit" className='w-full bg-amber-600 text-white ml-0'>Đăng ký</button>
                 </form>
             </div>
