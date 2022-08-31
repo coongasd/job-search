@@ -1,6 +1,8 @@
-import React from "react"
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/Action/UserAction";
+import { FaGift, FaLongArrowAltUp } from "react-icons/fa";
+
 import './style.css'
 
 function Header_CvCreate () {
@@ -8,6 +10,7 @@ function Header_CvCreate () {
 
     const userLogin = useSelector((state) => state.userLogin);
     const {userInfo, loading, error} = userLogin;
+
 
 
     return (
@@ -81,13 +84,56 @@ function Header_CvCreate () {
                 </div>
                 <div >
                     <ul class="nav_links">
-                        <li><a onClick={() => dispatch(logout())} href="#"><img src="images/message.png" alt="logo"></img></a></li>
-                        <li>
-                            <a href="/profile"><img src="images/admin.jpg" alt="logo"></img>
-                              <p>{userInfo?.name}</p>
-                            </a>
+                        <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
+                        <li class="nav_links_image name_user">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA" alt="logo"></img>
+                            <p>{userInfo?.name}</p>
+                            <div class="subnav">
+                                <div>
+                                    <ul class="subnav_list_avatar">
+                                        <div>
+                                            <li class="items_icons_text">
+                                                <FaLongArrowAltUp display={'block'}></FaLongArrowAltUp>
+                                                <p>Nâng cấp tài khoản vip</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Kích hoạt quà tặng</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Nhà tuyển dụng xem hồ sơ</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Cài đặt gợi ý việc làm</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Cài đặt nhận Email</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Cài đặt bảo mật</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Đổi mật khẩu</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <a onClick={() => dispatch(logout())} href="#"><p style={{color:'red'}}>Đăng xuất</p></a>
+                                            </li>
+                                        </div>
+                                      
+                                    </ul>
+        
+                                </div>
+                                <div class="subnav_img">
+                                   
+                                </div>
+                            </div>
                         </li>
-                   
                     </ul>
                 </div>
            </nav>

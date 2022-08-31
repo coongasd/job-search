@@ -67,6 +67,8 @@ function Login() {
                         </a>
                     </div>
                     <div className='flex justify-between mt-5'>
+                        Bạn chưa có tài khoản? <p className='text-amber-600 font-bold cursor-pointer'><a href='/register' style={{color: 'black'}}>Đăng ký ngay</a></p>
+
                         Bạn chưa có tài khoản? <a href="/register"><p className='text-amber-600 font-bold cursor-pointer'>Đăng ký ngay</p></a>
                     </div>
                 </form>
