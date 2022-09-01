@@ -25,6 +25,11 @@ function WorkProfileForm() {
 
 
     }
+        useEffect(() => {
+            setAccountTitle(userInfo?.accountTitle);
+            setUserType(userInfo?.userType);
+            setAboutMe(userInfo?.aboutMe);
+        },[userInfo])
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
@@ -37,11 +42,14 @@ function WorkProfileForm() {
     const submitHandler = (e) => {
 
         e.preventDefault();
-        dispatch(updateUserProfile({ id: userInfo._id, userType: userType, aboutMe: aboutMe }))
+        dispatch(updateUserProfile({ id: userInfo._id, userType: userType, aboutMe: aboutMe,accountTitle: accountTitle,skills:skills }))
         if (!toast.isActive(ToastId.current)) {
             ToastId.current = toast.success("Chỉnh sửa thành công", ToastObject);
 
         }
+        setTimeout(() => {
+            window.location.reload()
+        },3000)
 
 
     };
@@ -66,7 +74,7 @@ function WorkProfileForm() {
                         <div className='flex gap-8 w-1/2 justify-between'>
 
                             <label className='font-bold mt-2'>Tôi là*</label>
-                            <select onChange={(e) => setUserType(e.target.value)} id="vlance_accountbundle_accounttype_type" name="vlance_accountbundle_accounttype[type]" required="required" placeholder="Loại hình tài khoản" data-toggle="popover" data-placement="right" data-content="Chọn <b>Freelancer</b> nếu bạn đang tìm việc.<br/>Chọn <b>Nhà tuyển dụng</b> nếu bạn đang tìm kiếm freelancer." data-trigger="hover" data-html="true" class="w-1/2" data-original-title="" title="">
+                            <select value={userType} onChange={(e) => setUserType(e.target.value)} id="vlance_accountbundle_accounttype_type" name="vlance_accountbundle_accounttype[type]" required="required" placeholder="Loại hình tài khoản" data-toggle="popover" data-placement="right" data-content="Chọn <b>Freelancer</b> nếu bạn đang tìm việc.<br/>Chọn <b>Nhà tuyển dụng</b> nếu bạn đang tìm kiếm freelancer." data-trigger="hover" data-html="true" class="w-1/2" data-original-title="" title="">
                                 <option value="freelancer" selected="selected">Freelancer</option>
                                 <option value="client">Nhà tuyển dụng</option>
                             </select>
@@ -75,7 +83,7 @@ function WorkProfileForm() {
                         <div className='flex gap-8 w-1/2 justify-between'>
 
                             <label className='font-bold mt-2'>Chức danh*</label>
-                            <input onChange={(e) => setAccountTitle(e.target.value)} type="text" className='p-3 border rounded' placeholder=''></input>
+                            <input value={accountTitle} onChange={(e) => setAccountTitle(e.target.value)} type="text" className='p-3 border rounded' placeholder=''></input>
                         </div>
                         <p className="text-slate-500 font-light">Ví dụ Lập trình viên PHP / Chuyên gia thiết kế đồ họa với 6 năm kinh nghiệm v.v...</p>
                         <br />
@@ -83,7 +91,7 @@ function WorkProfileForm() {
                         <div className='flex gap-8 w-full'>
 
                             <label className='font-bold mt-2'>Giới thiệu bản thân</label>
-                            <textarea onChange={(e) => setAboutMe(e.target.value)} type="text" className='p-3 border rounded w-1/2' placeholder='Đôi điều về bản thân bạn'></textarea>
+                            <textarea value={aboutMe} onChange={(e) => setAboutMe(e.target.value)} type="text" className='p-3 border rounded w-1/2' placeholder='Đôi điều về bản thân bạn'></textarea>
 
                         </div>
                         <br />
@@ -211,9 +219,20 @@ function WorkProfileForm() {
                             }} value="" onKeyDown={handleKeyDown} trigger={["", " "]} options={["HTML5", "CSS3", "Javascript", "ReactJS", "Python", "PHP", "NodeJS", "Java", "C++"]} />
                             {
                                 skills && skills.map((skill) => (
+                            
                                     <div className='flex gap-2 items-center' key={skill}>
                                         <p className="text-black font-bold">{skill}</p>
-                                        <span  className='text-red-500 cursor-pointer font-bold'>x</span>
+                                        <span onClick={() => console.log(skills)} className='text-red-500 cursor-pointer font-bold'>x</span>
+                                    </div>
+
+
+                                ))
+                            } {
+                                userInfo?.skills && userInfo?.skills.map((skill) => (
+                            
+                                    <div className='flex gap-2 items-center' key={skill}>
+                                        <p className="text-black font-bold">{skill}</p>
+                                        <span onClick={() => console.log(skills)} className='text-red-500 cursor-pointer font-bold'>x</span>
                                     </div>
 
 
