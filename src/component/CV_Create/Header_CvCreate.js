@@ -1,18 +1,28 @@
 import React from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/Action/UserAction";
+<<<<<<< HEAD
 import { FaGift, FaLongArrowAltUp,FaUser,FaCog,FaSignOutAlt } from "react-icons/fa";
 import {Link} from 'react-router-dom'
+=======
+import { FaGift, FaLongArrowAltUp, FaEye, FaElementor, FaRegEnvelope, FaSuitcaseRolling, FaDoorOpen, FaExchangeAlt} from "react-icons/fa";
+
+>>>>>>> 43c334bdeef2c7ee334f4bf6267428bbad06abcb
 import './style.css'
 
 function Header_CvCreate() {
     const dispatch = useDispatch();
 
     const userLogin = useSelector((state) => state.userLogin);
+<<<<<<< HEAD
     const { userInfo, loading, error } = userLogin;
+=======
+    const {userInfo, loading, error} = userLogin;
+    const [login, setLogin] = useState(false);
+>>>>>>> 43c334bdeef2c7ee334f4bf6267428bbad06abcb
 
-
-
+    
     return (
         <div class="wrappar">
             <header>
@@ -20,6 +30,7 @@ function Header_CvCreate() {
                     <p>Tài khoản của bạn chưa được xác thực. Vui lòng xác thực tài khoản</p>
                     <a href="#">tại đây</a>
                 </div>
+<<<<<<< HEAD
                 <nav class="header_nav">
                     <div >
                         <ul class="nav_links">
@@ -41,6 +52,63 @@ function Header_CvCreate() {
                                     <div class="subnav_img">
                                         <img src="https://www.topcv.vn/v4/image/nav-job.png?v=1.0.0" alt=""></img>
                                     </div>
+=======
+                <div >
+                    <ul class="nav_links">
+                        <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
+                        <li class="nav_links_image name_user">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA" alt="logo"></img>
+                            <p>{userInfo?.name}</p>
+                            <div class="subnav">
+                                <div>
+                                    <ul class="subnav_list_avatar">
+                                        <div>
+                                            <li class="items_icons_text">
+                                                <FaLongArrowAltUp display={'block'}></FaLongArrowAltUp>
+                                                <p>Nâng cấp tài khoản vip</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaGift display={'block'}></FaGift>
+                                                <p>Kích hoạt quà tặng</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaEye display={'block'}></FaEye>
+                                                <p>Nhà tuyển dụng xem hồ sơ</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaElementor display={'block'}></FaElementor>
+                                                <p>Cài đặt gợi ý việc làm</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaRegEnvelope display={'block'}></FaRegEnvelope>
+                                                <p>Cài đặt nhận Email</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaSuitcaseRolling display={'block'}></FaSuitcaseRolling>
+                                                <p>Cài đặt bảo mật</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaExchangeAlt display={'block'}></FaExchangeAlt>
+                                                <p>Đổi mật khẩu</p>
+                                            </li>
+                                            <li class="items_icons_text">
+                                                <FaDoorOpen display={'block'}></FaDoorOpen>
+
+                                                <a onClick={() => dispatch(logout())} href="#">
+                                                    <p style={{color:'red'}}>
+                                                           {
+                                                            userInfo && (
+                                                                'Đăng Xuất'
+                                                            )|| 'Đăng Nhập'
+                                                           }
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </div>
+                                      
+                                    </ul>
+        
+>>>>>>> 43c334bdeef2c7ee334f4bf6267428bbad06abcb
                                 </div>
                             </li>
                             <li>
