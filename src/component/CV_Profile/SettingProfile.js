@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header_CvCreate from '../CV_Create/Header_CvCreate'
 import BasicInfo from './UserInfo/BasicInfo'
 import WorkProfile from './UserInfo/WorkProfile'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function SettingProfile() {
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const {userInfo, error,loading} = userLogin;
+
+  useEffect(() => {
+    if(!userInfo)
+    {
+      window.location = '/login';
+    }
+  },[userInfo])
+
   return (
     <div>  
  

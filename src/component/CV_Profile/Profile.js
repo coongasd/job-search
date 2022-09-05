@@ -27,7 +27,9 @@ function Profile(location) {
     const dispatch = useDispatch();
     console.log(userInfo)
      useEffect(() => {
-   
+   if(!userInfo){
+    window.location = '/login';
+   }
   },[userInfo])
  
      var button = document.querySelector('button')
@@ -63,7 +65,7 @@ function Profile(location) {
                     </form>
                     <div class="header-text">
                         <h1> {userInfo?.name}</h1>
-                        <p>{userInfo?.usersDetails?.education}</p>
+                        <p>{userInfo?.accountTitle}</p>
                     </div>
 
                 </div>
@@ -83,7 +85,7 @@ function Profile(location) {
                             <h1>SKILLS</h1>
                             <div class="bars">
                                 {
-                                    userInfo?.usersDetails?.skills.map((skill) => (
+                                    userInfo?.skills?.map((skill) => (
                                         <>
                                             <div class="bar">
                                                <p>{skill}</p>
@@ -111,25 +113,7 @@ function Profile(location) {
                             <h1 /><span>
                                 <i class="far fa-user"></i>
                                 ABOUT ME</span>
-                            <p>Đỗ Minh Giang là tên mà ba mẹ đặt cho lúc em mới ra đời. Nhưng mọi người trong nhà vẫn
-                                quen
-                                gọi em là Bé Còi. Cái tên đó xem ra rất hợp với thân hình nhỏ nhắn và nói đúng hơn là
-                                còi
-                                cọc của em. Ăn rất khoẻ nhưng em nghịch cũng dữ nên mẹ bảo em không thể lớn được. Tuy là
-                                con
-                                gái nhưng em nghịch như tụi con trai. Mỗi buổi chiều đi học về em thường cùng tụi thằng
-                                Sơn,
-                                thằng Phúc xách chai đi đổ dế. Hôm nào chán tụi em lại rủ nhau đi đánh đáo, đánh khăng.
-                                Trong nhà em toàn bi, ảnh, quay, không thể kiếm đâu ra một con búp bê hay một bộ đồ hàng
-                                cả.
-                                Ba thường vừa cười vừa trêu em “đáng lẽ Bé Còi nhà ta phải là con trai mới đúng”. Thành
-                                tích
-                                học tập của em rất tốt. Năm ngoái em còn được nhà trường cử đi thi học sinh giỏi môn
-                                Toán
-                                nữa đấy. Mơ ước lớn nhất của em là được trở thành phi công, lái những chiếc máy bay thật
-                                lớn, thật to bay lên bầu trời cao và trong xanh trên kia. Em tin chắc rằng mình sẽ thực
-                                hiện
-                                được ước mơ đó.</p>
+                          <p>{userInfo?.aboutMe}</p>
                         </div>
                         <div class="work">
                             <h1><span><i class="fas fa-suitcase-rolling"></i>

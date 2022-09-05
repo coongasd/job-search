@@ -13,12 +13,14 @@ import SettingProfile from './component/CV_Profile/SettingProfile';
 import WorkProfile from './component/CV_Profile/UserInfo/WorkProfile';
 
 import CV_Create from './component/CV_Create';
+import JobDetails from './component/Job/JobDetails';
 
 
 function App() {
   return (
       <div className="App">
         <Routes>
+          <Route path="/job/detail/" element={<JobDetails/>}/>
           <Route path="/profile/setting/workprofile" element={<WorkProfile/>}/> 
           <Route path="/profile/setting" element={<SettingProfile/>}/> 
           <Route path="/profile" element={<Profile/>}/> 
