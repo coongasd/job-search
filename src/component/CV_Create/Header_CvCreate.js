@@ -1,9 +1,10 @@
+
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/Action/UserAction";
-import { FaGift, FaLongArrowAltUp, FaEye, FaElementor, FaRegEnvelope, FaSuitcaseRolling, FaDoorOpen, FaExchangeAlt} from "react-icons/fa";
-
+import { FaGift, FaLongArrowAltUp, FaEye, FaElementor, FaRegEnvelope, FaSuitcaseRolling, FaDoorOpen, FaExchangeAlt, FaUser} from "react-icons/fa";
+import {Link} from "react-router-dom"
 import './style.css'
 
 function Header_CvCreate () {
@@ -94,10 +95,13 @@ function Header_CvCreate () {
                                                 <FaLongArrowAltUp display={'block'}></FaLongArrowAltUp>
                                                 <p>Nâng cấp tài khoản vip</p>
                                             </li>
-                                            <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
-                                                <p>Kích hoạt quà tặng</p>
-                                            </li>
+                                            <Link to="/profile">
+                                                <li class="items_icons_text">
+                                                    <FaGift display={'block'}></FaGift>
+                                                    <p>Hồ sơ</p>
+                                                </li>
+                                            </Link>
+                                          
                                             <li class="items_icons_text">
                                                 <FaEye display={'block'}></FaEye>
                                                 <p>Nhà tuyển dụng xem hồ sơ</p>

@@ -8,6 +8,7 @@ function FindJob() {
     <div>
         <Header/>
         <SearchBar/>
+        
     </div>
   )
 }
