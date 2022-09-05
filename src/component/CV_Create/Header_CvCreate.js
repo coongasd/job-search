@@ -1,7 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/Action/UserAction";
-import { FaGift, FaLongArrowAltUp } from "react-icons/fa";
+import { FaGift, FaLongArrowAltUp, FaEye, FaElementor, FaRegEnvelope, FaSuitcaseRolling, FaDoorOpen, FaExchangeAlt} from "react-icons/fa";
 
 import './style.css'
 
@@ -10,9 +11,9 @@ function Header_CvCreate () {
 
     const userLogin = useSelector((state) => state.userLogin);
     const {userInfo, loading, error} = userLogin;
+    const [login, setLogin] = useState(false);
 
-
-
+    
     return (
         <div class="wrappar">
         <header>
@@ -101,28 +102,37 @@ function Header_CvCreate () {
                                                 <p>Kích hoạt quà tặng</p>
                                             </li>
                                             <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
+                                                <FaEye display={'block'}></FaEye>
                                                 <p>Nhà tuyển dụng xem hồ sơ</p>
                                             </li>
                                             <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
+                                                <FaElementor display={'block'}></FaElementor>
                                                 <p>Cài đặt gợi ý việc làm</p>
                                             </li>
                                             <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
+                                                <FaRegEnvelope display={'block'}></FaRegEnvelope>
                                                 <p>Cài đặt nhận Email</p>
                                             </li>
                                             <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
+                                                <FaSuitcaseRolling display={'block'}></FaSuitcaseRolling>
                                                 <p>Cài đặt bảo mật</p>
                                             </li>
                                             <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
+                                                <FaExchangeAlt display={'block'}></FaExchangeAlt>
                                                 <p>Đổi mật khẩu</p>
                                             </li>
                                             <li class="items_icons_text">
-                                                <FaGift display={'block'}></FaGift>
-                                                <a onClick={() => dispatch(logout())} href="#"><p style={{color:'red'}}>Đăng xuất</p></a>
+                                                <FaDoorOpen display={'block'}></FaDoorOpen>
+
+                                                <a onClick={() => dispatch(logout())} href="#">
+                                                    <p style={{color:'red'}}>
+                                                           {
+                                                            userInfo && (
+                                                                'Đăng Xuất'
+                                                            )|| 'Đăng Nhập'
+                                                           }
+                                                    </p>
+                                                </a>
                                             </li>
                                         </div>
                                       

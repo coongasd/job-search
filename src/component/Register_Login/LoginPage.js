@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../Redux/Action/UserAction';
+import Header_CvCreate from '../CV_Create/Header_CvCreate';
 
 function Login() {
     const [email,setEmail] = useState("");
@@ -23,6 +24,7 @@ function Login() {
       
         },[userInfo]);
     
+
   return (
     <div style={{ backgroundImage: 'url(https://www.topcv.vn/v4/image/welcome/linear_web.png)'}} className='flex min-h-full'>
         <div className='left-content p-20 m-auto'>
@@ -67,8 +69,6 @@ function Login() {
                         </a>
                     </div>
                     <div className='flex justify-between mt-5'>
-                        Bạn chưa có tài khoản? <p className='text-amber-600 font-bold cursor-pointer'><a href='/register' style={{color: 'black'}}>Đăng ký ngay</a></p>
-
                         Bạn chưa có tài khoản? <a href="/register"><p className='text-amber-600 font-bold cursor-pointer'>Đăng ký ngay</p></a>
                     </div>
                 </form>

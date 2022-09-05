@@ -13,7 +13,7 @@ function Manager_CV () {
             <div class="Manager_CV_Items">
                 <div class="Text_Button">
                     <h1>CV đã tạo trên job search</h1>
-                    <button>+ Tạo CV</button>
+                    <button><a href="/profile">+ Tạo CV</a></button>
                 </div>
                 <div class="Text_Image">
                     <img src="https://www.topcv.vn/v4/image/cv-manager/no-cv.png"></img>
