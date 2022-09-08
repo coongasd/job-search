@@ -1,8 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Header from "../MainPage/Header";
 import './style.css'
 
 function Manager_CV () {
+
+    const userLogin = useSelector((state) => state.userLogin);
+    const {error, loading, userInfo} = userLogin;
+  
+
+
     return (
       <div class="Manager_CV_Container">
         <div class="Manager_CV_BoxLeft">
@@ -134,7 +141,7 @@ function Manager_CV () {
                
                 <div class="BoxTop_Text_Button">
                     <p>Chào mừng trở lại</p>
-                    <h1>Hacker ẩn danh</h1>
+                    <h1>{userInfo?.name}</h1>
                     <p>Tài khoản chưa được xác thực</p>
                     <button class="BoxRight_Button">Nâng cấp tài khoản</button>
                 </div>

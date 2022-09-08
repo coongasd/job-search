@@ -21,6 +21,7 @@ function App() {
   return (
       <div className="App">
         <Routes>
+          <Route path="/job/post/" element={<PostJob/>}/>
           <Route path="/job/detail/" element={<JobDetails/>}/>
           <Route path="/profile/setting/workprofile" element={<WorkProfile/>}/> 
           <Route path="/profile/setting" element={<SettingProfile/>}/> 

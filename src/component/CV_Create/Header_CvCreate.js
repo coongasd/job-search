@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/Action/UserAction";
-import { FaGift, FaLongArrowAltUp, FaEye, FaElementor, FaRegEnvelope, FaSuitcaseRolling, FaDoorOpen, FaExchangeAlt, FaUser} from "react-icons/fa";
+import { FaGift, FaLongArrowAltUp, FaEye, FaElementor, FaRegEnvelope, FaSuitcaseRolling, FaDoorOpen, FaExchangeAlt, FaUser ,FaCog} from "react-icons/fa";
 import {Link} from "react-router-dom"
 import './style.css'
 
@@ -84,7 +84,8 @@ function Header_CvCreate () {
                 <div >
                     <ul class="nav_links">
                         <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
-                        <li class="nav_links_image name_user">
+                        {userInfo && (<>
+                            <li class="nav_links_image name_user">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA" alt="logo"></img>
                             <p>{userInfo?.name}</p>
                             <div class="subnav">
@@ -97,15 +98,17 @@ function Header_CvCreate () {
                                             </li>
                                             <Link to="/profile">
                                                 <li class="items_icons_text">
-                                                    <FaGift display={'block'}></FaGift>
+                                                    <FaUser display={'block'}></FaUser>
                                                     <p>Hồ sơ</p>
                                                 </li>
                                             </Link>
-                                          
+                                          <Link to="/profile/setting">
                                             <li class="items_icons_text">
-                                                <FaEye display={'block'}></FaEye>
-                                                <p>Nhà tuyển dụng xem hồ sơ</p>
-                                            </li>
+                                                    <FaCog display={'block'}></FaCog>
+                                                    <p>Chỉnh sửa hồ sơ</p>
+                                                </li>
+                                          </Link>
+                                         
                                             <li class="items_icons_text">
                                                 <FaElementor display={'block'}></FaElementor>
                                                 <p>Cài đặt gợi ý việc làm</p>
@@ -145,6 +148,15 @@ function Header_CvCreate () {
                                 </div>
                             </div>
                         </li>
+
+                        </>) || 
+                <a href="/login">
+ <li className="font-bold cursor-pointer text-black">Đăng nhập</li>
+                </a>
+                           
+                      
+                       }
+                       
                     </ul>
                 </div>
            </nav>
