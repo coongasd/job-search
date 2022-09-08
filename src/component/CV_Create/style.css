@@ -243,13 +243,13 @@ nav {
 }
 
 .Manager_CV_Container .Manager_CV_BoxLeft {
-    width:700px;
+    width:800px;
     display: flex;
     flex-direction: column;
 }
 
 .Manager_CV_Container .Manager_CV_BoxRight{
-    height: 500px;
+    height: 600px;
     width: 350px;
     background: #fff;
     display: flex;
@@ -376,9 +376,9 @@ nav {
     display: flex;
     flex-direction: row;
     position: relative;
-    margin-top: 50px;
+    margin-top: 70px;
     width: 5px;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-bottom: 40px;
 
 }
@@ -556,83 +556,4 @@ input[type='checkbox']:checked::after {
     padding: 4px 8px;
 }
 
-/*--------------------------------------------POST JOB-----------------------------------------*/
-.post_wrapper {
-  
-}
 
-.post_wrapper>h1 {
-    margin: 0;
-    font-size: 40px;
-    font-weight: 300;
-    color: #000;
-    text-align: center;
-    text-transform: initial;
-}
-
-.post_forms {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: left;
-}
-
-.post_forms .icon_form {
-    width: 100px;
-    height: 100px;
-    background: #00b14f;
-    margin-right: 30px;
-}
-
-.list_form {
-    display: flex;
-    flex-direction: column;
-    padding: 0 15px;
-}
-
-.list_form .item_form {
-    margin: 15px;
-}
-
-.list_form .item_form h1 {
-    font-weight: bold;
-    font-size: 20px;
-    display:block;
-    margin: 10px 0;
-}
-
-.list_form .item_form p {
-    margin-bottom: 8px;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: initial;
-}
-
-.list_form .item_form select, .list_form .item_form input {
-    width: 50%;
-    font-size: 14px;
-    height: 40px;
-    margin-bottom: 10px;
-}
-
-.list_form .item_form textarea {
-    width: 70%;
-    font-size: 14px;
-    height: 300px;
-    margin-bottom: 10px;
-}
-
-.item_form a {
-    color: #08c;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.list_form  button {
-    background: yellow;
-    width: 100%;
-    margin: 50px 0;
-    padding: 0 0;
-}

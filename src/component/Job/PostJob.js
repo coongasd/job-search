@@ -1,5 +1,5 @@
 import React from "react";
-import "../CV_Create/style.css";
+import "../Job/style.css";
 import Header_CvCreate from "../CV_Create/Header_CvCreate";
 function PostJob() {
   return (
