@@ -14,13 +14,18 @@ import WorkProfile from './component/CV_Profile/UserInfo/WorkProfile';
 
 import CV_Create from './component/CV_Create';
 import JobDetails from './component/Job/JobDetails';
-<<<<<<< HEAD
+
 import Contact from './component/CV_Contact/Contact'
+import PostJob from './component/Job/PostJob';
+
+
+
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/job/post/" element={<PostJob />} />
         <Route path="/job/detail/" element={<JobDetails />} />
         <Route path="/profile/setting/workprofile" element={<WorkProfile />} />
         <Route path="/profile/setting" element={<SettingProfile />} />
@@ -28,33 +33,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/job" element={<FindJob />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/cv_create" element={<CV_Create />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/postjob" element={<PostJob />} />
         <Route path="/" element={<MainPage />} />
       </Routes>
     </div>
-=======
-import PostJob from './component/Job/PostJob';
 
-
-function App() {
-  return (
-      <div className="App">
-        <Routes>
-          <Route path="/job/post/" element={<PostJob/>}/>
-          <Route path="/job/detail/" element={<JobDetails/>}/>
-          <Route path="/profile/setting/workprofile" element={<WorkProfile/>}/> 
-          <Route path="/profile/setting" element={<SettingProfile/>}/> 
-          <Route path="/profile" element={<Profile/>}/> 
-          <Route path="/register" element={<Register/>}/>  
-          <Route path="/login" element={<Login/>}/> 
-          <Route path="/job" element={<FindJob/>}/> 
-          <Route path="/cv_create" element={<CV_Create/>}/>
-          <Route path="/postjob" element={<PostJob/>}/>
-          <Route path="/" element={<MainPage/>}/>  
-        </Routes>
-      </div>
->>>>>>> 87270ea0e0f3a602e0a82d440700ffb976e99ca1
   );
 }
 
