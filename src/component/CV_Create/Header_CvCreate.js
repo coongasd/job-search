@@ -83,6 +83,16 @@ function Header_CvCreate () {
                 </div>
                 <div >
                     <ul class="nav_links">
+                        {
+                            userInfo?.userType === 'client' ? (<>
+                              <li className="hover:bg-transparent">
+                            <Link to="/job/post">
+                                <button className="bg-amber-600 m-0">Đăng việc làm</button>
+                            </Link>
+                        </li>
+                            </>) : (<></>)
+                        }
+                      
                         <li><a href="#"><img src="images/message.png" alt="logo"></img></a></li>
                         {userInfo && (<>
                             <li class="nav_links_image name_user">
