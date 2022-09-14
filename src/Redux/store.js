@@ -3,13 +3,17 @@ import thunk from "redux-thunk";
 import {composeWithDevTools} from "redux-devtools-extension";
 
 import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer } from './Reducer/UserReducer';
+import { getAllJobReducer, getJobDetailReducer, jobCreateReducer } from './Reducer/JobReducer';
 
 const reducer = combineReducers({
   
     userLogin:userLoginReducer,
     userRegister: userRegisterReducer,
     userDetails:userDetailsReducer,
-    userUpdateProfile:userUpdateProfileReducer
+    userUpdateProfile:userUpdateProfileReducer,
+    createJob:jobCreateReducer,
+    getAllJob: getAllJobReducer,
+    getSingleJob: getJobDetailReducer
 });
 
     //login

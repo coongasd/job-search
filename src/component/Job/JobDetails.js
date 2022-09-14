@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom'
+import { getSingleJob } from '../../Redux/Action/JobAction';
 import Header_CvCreate from '../CV_Create/Header_CvCreate'
-
+import moment from "moment";
 function JobDetails() {
+    const dispatch = useDispatch();
+    const id = useParams();
+    const {job} = useSelector((state) => state.getSingleJob);
+    console.log(job)
+    useEffect(() => {
+        dispatch(getSingleJob(id?.id))
+    },[id,dispatch])
     return (
         <div className='main-content'>
             <Header_CvCreate />
             <div className='container flex'>
                 <div className='left-content ml-10 my-5 w-2/4 text-left'>
                     <div className='job-requirement'>
-                        <h2 className='job-title text-2xl font-bold float-left mb-5'>Cần một bạn viết bài chăm sóc nội dung cho các fanpage và website</h2>
+                        <h2 className='job-title text-2xl font-bold float-left mb-5'>{job?.jobTitle}</h2><br/><br/>
                         <span className=' bg-gray-300 p-2 '>
-                            Dịch vụ cần thuê: <b className='text-sky-600 cursor-pointer'> Viết nội dung cho website </b>
+                            Dịch vụ cần thuê: <b className='text-sky-600 cursor-pointer'>{job?.jobField} </b>
                         </span>
                         <div className='mt-5'>
-                            <p className=''>1. Viết bài định kỳ website, fanpage, Seo.</p>
-                            <p className=''>2. Thiết kế cơ bản nội dung.</p>
+                            {job?.detailRequirement}
                         </div>
                     </div>
                     <div className='send-profile mt-5 bg-gray-200 p-3 rounded'>
@@ -67,27 +76,27 @@ function JobDetails() {
 
                         <div className='flex gap-20 justify-start mb-2'>
                             <dt>ID dự án</dt>
-                            <dd className='ml-5'>61318</dd>
+                            <dd className=''>{job?._id}</dd>
                         </div>
                         <div className='flex gap-20 justify-start mb-2'><dt>Ngày đăng</dt>
                             <dd className='ml-1'>
-                                30/08/2022, 15:43 </dd></div>
+                                { moment(job?.createdAt).format('l')} </dd></div>
                         <div className='flex gap-20 justify-start mb-2'>
-                            <dt>Chỉ còn</dt>
-                            <dd className='ml-7'>26 ngày 2 giờ</dd>
+                            <dt>Thời gian tuyển</dt>
+                            <dd className='ml-7'>{job?.projectInfo?.limitTime}</dd>
                         </div>
                         <div className='flex gap-20 justify-start mb-2'>   <dt>Địa điểm</dt>
                             <dd className='ml-5'>
                                 TP. Hồ Chí Minh </dd></div>
                         <div className='flex w-full gap-20 justify-start mb-2'><dt>Ngân sách</dt>
                             <dd className='ml-2'>
-                                3.000.000đ - 5.000.000đ </dd> </div>
+                                {job?.projectInfo?.budget} </dd> </div>
                         <div className='flex gap-20 justify-start mb-2'><dt>Hình thức làm việc</dt>
                             <dd>
-                                Làm online </dd></div>
+                                {job?.projectInfo?.workingForm} </dd></div>
                         <div className='flex gap-20 justify-start mb-2'> <dt>Hình thức trả lương</dt>
                             <dd>
-                                Trả theo tháng </dd></div>
+                                {job?.projectInfo?.salaryPaymentMethod}</dd></div>
 
 
                     </div>
@@ -95,7 +104,7 @@ function JobDetails() {
                     <div className='user-description'>
                         <div className='ml-2 flex gap-8'>
                             <img src="images/user.png" alt="user" />
-                            <p className='text-sky-500'>Vinh Nguyen</p>
+                            <p className='text-sky-500'>{job?.user?.userInfo?.name}</p>
 
                         </div>
                         <div className='flex gap-20 justify-start mb-2'>
@@ -106,7 +115,7 @@ function JobDetails() {
                     <div className='flex gap-20 justify-start mb-2'>
                         <dt>Tham gia vào</dt>
                         <dd>
-                            12/02/2020 </dd>
+                            { moment(job?.user?.userInfo?.created).format('l')} </dd>
                     </div>
                     <button className='mx-0 my-3 w-full bg-amber-600'>Liên hệ trực tiếp</button>
                 </div>

@@ -4,7 +4,7 @@ import MainPage from './component/MainPage/MainPage';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Profile from './component/CV_Profile/Profile'
-import {Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 import Register from './component/Register_Login/RegisterPage';
 import Login from './component/Register_Login/LoginPage';
 import FindJob from './component/Job/FindJob';
@@ -14,14 +14,19 @@ import WorkProfile from './component/CV_Profile/UserInfo/WorkProfile';
 
 import CV_Create from './component/CV_Create';
 import JobDetails from './component/Job/JobDetails';
+
+import Contact from './component/CV_Contact/Contact'
 import PostJob from './component/Job/PostJob';
 import Company_Profile from './component/Company_Profile/Company_Profie';
+
+
 
 
 function App() {
   return (
       <div className="App">
         <Routes>
+          <Route path="/job/:id/" element={<JobDetails/>}/>
           <Route path="/job/post/" element={<PostJob/>}/>
           <Route path="/job/detail/" element={<JobDetails/>}/>
           <Route path="/profile/setting/workprofile" element={<WorkProfile/>}/> 
