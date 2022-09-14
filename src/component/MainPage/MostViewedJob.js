@@ -7,7 +7,7 @@ function MostViewedJob() {
             <h2 className='text-amber-600 text-xl font-bold text-center py-5'>Các công việc được quan tâm nhất</h2>
             <div className='list-job-box  w-2/3 m-auto'>
                 <div className='single-job text-left p-5 border-2 rounded '>
-                    <a href="#" className='text-amber-500'>Thiết kế website máy ảnh, phụ kiện máy ảnh</a>
+                    <a href="/company" className='text-amber-500'>Thiết kế website máy ảnh, phụ kiện máy ảnh</a>
                     <p className='ml-5 mt-1'>Minh Nhật</p>
                     <div className='job-required flex justify-between bg-gray-200 mt-5'>
                         <p className='mx-10 text-slate-500 font-bold '>Toàn Quốc | Lập trình web | 15.000.000 đ - 20.000.000 đ</p>

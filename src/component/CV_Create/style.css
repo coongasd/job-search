@@ -38,7 +38,7 @@ nav {
     margin: 0;
     display: flex;
     justify-content: flex-start;
-    height: 100px;
+    height: 75px;
     background-color: #fff;
     align-items: center;
 }
@@ -138,7 +138,11 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 150px;
+    width: auto;
+}
+
+.nav_links .nav_links_image p {
+    padding: 0 5px;
 }
 
 .nav_links .nav_links_image img {
@@ -556,4 +560,48 @@ input[type='checkbox']:checked::after {
     padding: 4px 8px;
 }
 
+/*=====================================search_header============================*/
+.search_header {
+    border-top: solid 1px rgb(204, 201, 201) ;
+    position: relative;
+    top: -22px;
+}
 
+.search_header form{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search_header button {
+    background: #00b14f;
+    margin: 0 0;
+}
+
+.search_header input {
+    width: 400px;
+    padding: 20px 5px;
+    height: 15px;
+    outline: #00b14f;
+}
+
+.search_header input:hover, .search_header select:hover {
+    border: solid 2px #00b14f;
+}
+
+.search_header .search_item {
+    margin: 0 10px;
+    height: 40px;
+    border-radius: 5px;
+    border:  solid 1px rgb(204, 201, 201);
+}
+
+/*--------------------------------------------------Company_Wrapper------------------------------------*/
+.Company_Wrapper {
+    height: 500px;
+    background: #4fc986;
+}

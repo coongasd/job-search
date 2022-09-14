@@ -15,6 +15,7 @@ import WorkProfile from './component/CV_Profile/UserInfo/WorkProfile';
 import CV_Create from './component/CV_Create';
 import JobDetails from './component/Job/JobDetails';
 import PostJob from './component/Job/PostJob';
+import Company_Profile from './component/Company_Profile/Company_Profie';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/job" element={<FindJob/>}/> 
           <Route path="/cv_create" element={<CV_Create/>}/>
           <Route path="/postjob" element={<PostJob/>}/>
+          <Route path="/company" element={<Company_Profile/>}/>
           <Route path="/" element={<MainPage/>}/>  
         </Routes>
       </div>
