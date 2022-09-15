@@ -11,7 +11,7 @@ function MainPage() {
     <div className="content-wraper  text-base mx-auto relative">
         <Header_CvCreate />
         <BoxSearch/>
-        <TopCategory/>
+       
         <MostViewedJob/>
        
     </div>
