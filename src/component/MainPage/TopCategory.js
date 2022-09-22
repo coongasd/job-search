@@ -16,7 +16,7 @@ function TopCategory() {
         arrows: false,
       };
   return (
-    <div className='container'>
+    <div className='acontainer'>
         <div className='row-auto'>
             <div className='grid-cols-12'>
                 <h2 className='text-amber-600 text-xl font-bold text-start py-5 ml-10'>Top ngành nghề nổi bật</h2>

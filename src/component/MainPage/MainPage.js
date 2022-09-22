@@ -1,6 +1,5 @@
 import React from 'react';
 import BoxSearch from './BoxSearch';
-import Header from './Header';
 import MostViewedJob from './MostViewedJob';
 import TopCategory from './TopCategory';
 import Header_CvCreate from '../CV_Create/Header_CvCreate';
@@ -11,8 +10,7 @@ function MainPage() {
         <Header_CvCreate />
         <BoxSearch/>
         <TopCategory/>
-        <MostViewedJob/>
-       
+        <MostViewedJob/> 
     </div>
    
   )

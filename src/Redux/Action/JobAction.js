@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ALL_JOB_FAIL, ALL_JOB_REQUEST, ALL_JOB_SUCCESS, JOB_DETAIL_FAIL, JOB_DETAIL_REQUEST, JOB_DETAIL_SUCCESS, JOB_POST_FAIL, JOB_POST_REQUEST, JOB_POST_SUCCESS } from "../Constants/JobConstants";
+import { ALL_JOB_FAIL, ALL_JOB_REQUEST, ALL_JOB_SUCCESS, JOB_APPLY_FAIL, JOB_APPLY_REQUEST, JOB_APPLY_SUCCESS, JOB_DETAIL_FAIL, JOB_DETAIL_REQUEST, JOB_DETAIL_SUCCESS, JOB_POST_FAIL, JOB_POST_REQUEST, JOB_POST_SUCCESS } from "../Constants/JobConstants";
 import { logout } from "./UserAction";
 export const createJob = (job) => async(dispatch,getState) => {
     try {
@@ -98,4 +98,47 @@ export const getSingleJob = (id) => async(dispatch) => {
             : error.message
         });
     }
+}
+
+
+//order pay
+export const jobApply = (jobId,offers) => async(dispatch,getState) => {
+    try {
+        dispatch({type: JOB_APPLY_REQUEST});
+       
+    const {
+        userLogin: {userInfo}, 
+    } = getState();
+
+
+    const config ={
+        headers:{
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userInfo.token}`,
+        },
+    };
+    const {data} = await axios.put(
+        `/api/job/${jobId}/apply`,offers,
+        config
+    );
+    dispatch({type: JOB_APPLY_SUCCESS, payload: data});
+   
+
+
+    } catch (error) {
+        const message =  error.response && error.response.data.message ? error.response.data.message
+        : error.message;
+        if(message === "Not authorized, token failed")
+        {
+            dispatch(logout);
+        }
+        dispatch({
+            type: JOB_APPLY_FAIL,
+            payload:
+            message,
+
+        });
+    }
+
+
 }

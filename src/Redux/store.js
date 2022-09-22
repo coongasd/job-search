@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import {composeWithDevTools} from "redux-devtools-extension";
 
 import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer } from './Reducer/UserReducer';
-import { getAllJobReducer, getJobDetailReducer, jobCreateReducer } from './Reducer/JobReducer';
+import { getAllJobReducer, getJobDetailReducer, jobApplyReducer, jobCreateReducer } from './Reducer/JobReducer';
 
 const reducer = combineReducers({
   
@@ -13,7 +13,8 @@ const reducer = combineReducers({
     userUpdateProfile:userUpdateProfileReducer,
     createJob:jobCreateReducer,
     getAllJob: getAllJobReducer,
-    getSingleJob: getJobDetailReducer
+    getSingleJob: getJobDetailReducer,
+    jobApply: jobApplyReducer,
 });
 
     //login
