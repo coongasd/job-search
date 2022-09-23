@@ -531,8 +531,21 @@ input[type='checkbox']:checked::after {
     color: #666;
 }
 
-.Company_Items .Company_Description p {
-    padding-left: 10px;
+.Company_Items .Company_Description p{
+    padding: 10px;
+}
+
+.Company_Description .Cv_Apply_State a {
+    background: #5ae297;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 100px;
+}
+
+.Company_Description .Cv_Apply_State a:hover {
+    background: #bbebd0;
 }
 
 .Company_Description .Company_Link {
@@ -642,9 +655,14 @@ input[type='checkbox']:checked::after {
     border-radius: 60px;
     margin: 15px;
     text-align: center;
+    position: relative;
 }
 
 .job_title .company_image img {
     width: 75%;
     max-height: 100%;
+    display: block;
+    position:absolute;
+    top: 30px;
+    left: 15px;
 }
