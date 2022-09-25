@@ -43,7 +43,7 @@ export const createJob = (job) => async(dispatch,getState) => {
 }
 
 // get all job
-export const getAllJob = () => async(dispatch,getState) => {
+export const getAllJob = (keyword = " ") => async(dispatch,getState) => {
     try {
         dispatch({type: ALL_JOB_REQUEST});
        
@@ -59,7 +59,7 @@ export const getAllJob = () => async(dispatch,getState) => {
         },
     };
     const {data} = await axios.get(
-        `/api/job/all`,
+        `/api/job?keyword=${keyword}`,
         config
     );
     dispatch({type: ALL_JOB_SUCCESS, payload: data});

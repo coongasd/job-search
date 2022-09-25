@@ -9,6 +9,7 @@ import { toast } from 'react-toastify'
 function JobDetails() {
     const dispatch = useDispatch();
     const id = useParams();
+
     const {job} = useSelector((state) => state.getSingleJob);
     const [moneyExpect, setMoneyExpect] = useState("");
     const [timeToComplete,setTimeToComplete] = useState("");
@@ -16,13 +17,22 @@ function JobDetails() {
  
     const userLogin = useSelector((state) => state.userLogin)
     const  {userInfo} = userLogin;
+   
     
+
+    //get current time
+    var today = new Date();
+    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
     // const found  = job?.offers?.find((element) => {
     //     if(element.users.userInfo._id === userInfo?._id)
     //     {
     //         return true;
     //     }
     // })
+    
+    // if user applied this job, they cant apply again
     const found  = job?.offers?.map((e) => {
         if(e.users.userInfo._id === userInfo?._id){
             return true
@@ -32,6 +42,12 @@ function JobDetails() {
         }
     })
     const applied = found?.some((e) => e === true)
+    
+    // if this job was post by user, they cant apply
+    const postOwnerId = job?.user?.userInfo?._id;
+
+    const ownerCheck = postOwnerId === userInfo?._id ? true : false;
+    
     useEffect(() => {
         dispatch(getSingleJob(id?.id))
         if(success){
@@ -46,6 +62,7 @@ function JobDetails() {
         {
             users:{userInfo},
             moneyExpect:moneyExpect,
+            applyTime: dateTime,
             timeToComplete: timeToComplete
 
         }))
@@ -72,10 +89,10 @@ function JobDetails() {
             <div className='container flex'>
                 <div className='left-content ml-10 my-5 w-2/4 text-left'>
                     <div className='job-requirement'>
-                        <h2 className='job-title text-2xl font-bold float-left mb-5'>{job?.jobTitle}</h2><br/><br/>
-                        <span className=' bg-gray-300 p-2 '>
+                        <h2 className='job-title text-2xl font-bold float-left mb-5'>{job?.jobTitle}</h2><br/><br/><br/><br/>
+                        <span className='float-left bg-gray-300 p-2 '>
                             Dịch vụ cần thuê: <b className='text-sky-600 cursor-pointer'>{job?.jobField} </b>
-                        </span>
+                        </span><br/><br/>
                         <div className='mt-5'>
                             {job?.detailRequirement}
                         </div>
@@ -106,7 +123,7 @@ function JobDetails() {
                                     </div>
                                     <div class="form-text block-duration mt-2">
                                         <label class="title-in-form">DỰ KIẾN HOÀN THÀNH TRONG<span class="text-red">*</span></label><br/>
-                                        <select onChange={(e) => setTimeToComplete(e.target.value)} id="vlance_jobbundle_bidtype_duration" name="vlance_jobbundle_bidtype[duration]" required="required" pattern="[0-9]*" placeholder="ví dụ: 14" className="w-1/2 p-2 row-fluid span12 valid">
+                                        <select onChange={(e) => setTimeToComplete(e.target.value)} id="vlance_jobbundle_bidtype_duration" name="vlance_jobbundle_bidtype[duration]" required="required"  placeholder="ví dụ: 14" className="w-1/2 p-2 row-fluid span12 valid">
                                             <option value="1">1 Ngày</option>
                                             <option value="2">2 Ngày</option>
                                             <option value="3" selected="selected">3 Ngày</option>
@@ -120,9 +137,14 @@ function JobDetails() {
                                     </div>
                                 </div>
                             </div>
-                            {applied && (<>
-                                <button className="m-0 bg-black mt-4" disabled>Bạn đã gửi chào giá</button>
-                            </>) ||  <button className="m-0 bg-amber-600 mt-4">Gửi chào giá</button>}
+                            {
+                                ownerCheck && (<> <button className="m-0 bg-black mt-4" disabled>Đây là việc do bạn đăng</button></>)  || (
+                                    applied &&(<>
+                                        <button className="m-0 bg-black mt-4" disabled>Bạn đã gửi chào giá</button>
+                                    </>) ||  <button className="m-0 bg-amber-600 mt-4">Gửi chào giá</button>
+                                )
+                            }
+                            
                            
                         </form>
                        
@@ -130,7 +152,7 @@ function JobDetails() {
 
 
                 </div>
-                <div className=' right-content project-box w-1/3 mt-1 p-3 border shadow-md'>
+                <div className=' right-content project-box w-1/2 mt-1 p-3 border shadow-md'>
                     <b className="float-left text-xl">Thông tin dự án</b><br /><br />
                     <div class="description-job">
 

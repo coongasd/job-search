@@ -68,7 +68,7 @@ function WorkProfileForm() {
 
             <div className='form mt-10'>
                 <form onSubmit={submitHandler} className='text-left'>
-                    <div className='left'>
+                    <div className=''>
 
                         <br />
                         <div className='flex gap-8 w-1/2 justify-between'>

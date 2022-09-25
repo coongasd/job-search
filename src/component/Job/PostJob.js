@@ -69,7 +69,7 @@ function PostJob() {
       <Toast />
       <h1>ĐĂNG TIN</h1>
       <div className="post_forms">
-        <div className="icon_form"></div>
+      
         <div className="Information_form">
           <form onSubmit={postJobHandler} className="list_form">
             <div className="item_form">
@@ -227,7 +227,7 @@ function PostJob() {
                   <input  onChange={(e) => setBudget(e.target.value)} type="text" id="vlance_jobbundle_jobtype_budgetMax" placeholder="Ví dụ : Từ 10 - 15tr VND" data-toggle="popover" data-placement="top" data-content="Thù lao dự kiến, VD: 500.000" data-trigger="hover" class="popovers-input span12"></input>
                 </div>
               </div>
-              <button type="submit" className="">Đăng tin</button>
+              <button type="submit" className="bg-amber-600">Đăng tin</button>
           </form>
         </div>
       </div>

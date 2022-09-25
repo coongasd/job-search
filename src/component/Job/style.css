@@ -21,7 +21,7 @@
 .post_forms .icon_form {
     width: 100px;
     height: 100px;
-    background: #00b14f;
+
     margin-right: 30px;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .list_form  button {
-    background: yellow;
+ 
     width: 100%;
     margin: 50px 0;
     padding: 0 0;

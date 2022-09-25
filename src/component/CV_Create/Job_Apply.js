@@ -1,14 +1,33 @@
 import Header_CvCreate from "./Header_CvCreate";
 import Manager_CV from "./Manager_CV";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../MainPage/Header";
 import "./style.css";
+import { getAllJob } from "../../Redux/Action/JobAction";
 
 function Job_Apply() {
+  const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { error, loading, userInfo } = userLogin;
+  const { jobs } = useSelector((state) => state.getAllJob)
+  const appliedJob = [];
+  useEffect(() => {
+    dispatch(getAllJob());
+}, [dispatch])
+  console.log(jobs)
 
+  const found = jobs?.map((job) => {
+    job.offers.map((offer) => {
+      if(offer.users.userInfo._id === userInfo?._id){
+        appliedJob.push(job);
+        
+      }
+    }
+     
+    )
+  })
+  
   return (
     <div>
       <Header_CvCreate />,
@@ -18,96 +37,38 @@ function Job_Apply() {
             <div class="Company_Text">
               <h1>Công việc đã ứng tuyển</h1>
             </div>
-            <div class="Company_Items">
-              <div class="Company_Description">
-                <img src="https://cdn.topcv.vn/48/company_logos/tek-experts-vietnam-62a553577f2a7.jpg"></img>
-                <div class="Company_Link">
-                  <a href="#">
-                    IT Support Engineers - Microsoft Software Support
-                    (Fresher/Experienced)
-                  </a>
-                  <a href="#">TEK EXPERTS VIETNAM</a>
+            {
+              appliedJob?.length !== 0  ? 
+              (appliedJob.map((job) => 
+              (<>
+               <div key={job._id} class="Company_Items">
+                <div class="Company_Description">
+                 
+                  <div class="Company_Link">
+                    <a href={`/job/${job._id}`}>
+                     {job.jobTitle}
+                    </a>
+                    <a href="#">{job.user?.userInfo?.name}</a>
+                  </div>
+                  <div className="Cv_Apply_State">
+                      <p> {job.offers?.map((offer) => (<>{offer.applyTime}</>))}</p>
+                      <div>
+                          <a href="#">Nhắn tin</a>
+                          <a href="#" style={{color: '#fff'}}>Xem CV</a>
+                      </div>
+                  </div>
                 </div>
-                <div className="Cv_Apply_State">
-                    <p> 23-09-2022 14:26 PM</p>
-                    <div>
-                        <a href="#">Nhắn tin</a>
-                        <a href="#" style={{color: '#fff'}}>Xem CV</a>
-                    </div>
-                </div>
-              </div>
               <div class="Company_State">
-                <p>trên 600 USD</p>
+                <p>{job.projectInfo?.budget}</p>
                 <p>Hà Nội</p>
                 <p>4 Tháng trước</p>
               </div>
             </div>
-            <div class="Company_Items">
-              <div class="Company_Description">
-                <img src="	https://cdn.topcv.vn/48/company_logos/c3bdc859a308a9fa128c5bf8df6fd703-61c3f7d10f9fd.jpg"></img>
-                <div class="Company_Link">
-                  <a href="#">
-                    Nhân Viên Marketing Online (Google Ads) - Lương Cứng Từ 10 -
-                    15Tr + Thưởng{" "}
-                  </a>
-                  <a href="#">CÔNG TY TNHH TRUYỀN THÔNG MEDIA POWER</a>
-                </div>
-                <div className="Cv_Apply_State">
-                    <p> 23-09-2022 14:26 PM</p>
-                    <div>
-                        <a href="#">Nhắn tin</a>
-                        <a href="#" style={{color: '#fff'}}>Xem CV</a>
-                    </div>
-                </div>
-              </div>
-              <div class="Company_State">
-                <p>trên 15 triệu </p>
-                <p>Hà Nội</p>
-                <p>4 năm trước</p>
-              </div>
-            </div>
-            <div class="Company_Items">
-              <div class="Company_Description">
-                <img src="https://cdn.topcv.vn/48/company_logos/tek-experts-vietnam-62a553577f2a7.jpg"></img>
-                <div class="Company_Link">
-                  <a href="#">
-                    IT Support Engineers - Microsoft Software Support
-                    (Fresher/Experienced)
-                  </a>
-                  <a href="#">TEK EXPERTS VIETNAM</a>
-                </div>
-                <div className="Cv_Apply_State">
-                    <p> 23-09-2022 14:26 PM</p>
-                    <div>
-                        <a href="#">Nhắn tin</a>
-                        <a href="#" style={{color: '#fff'}}>Xem CV</a>
-                    </div>
-                </div>
-              </div>
-              <div class="Company_State">
-                <p>trên 600 USD</p>
-                <p>Hà Nội</p>
-                <p>4 Tháng trước</p>
-              </div>
-            </div>
-            <div class="Company_Items">
-              <div class="Company_Description">
-                <img src="https://cdn.topcv.vn/48/company_logos/tek-experts-vietnam-62a553577f2a7.jpg"></img>
-                <div class="Company_Link">
-                  <a href="#">
-                    IT Support Engineers - Microsoft Software Support
-                    (Fresher/Experienced)
-                  </a>
-                  <a href="#">TEK EXPERTS VIETNAM</a>
-                </div>
-                <p>Còn 5 ngày để ứng tuyển</p>
-              </div>
-              <div class="Company_State">
-                <p>trên 600 USD</p>
-                <p>Hà Nội</p>
-                <p>4 Tháng trước</p>
-              </div>
-            </div>
+              </>))) :  (<><p className="text-red-500 text-3xl font-bold">Bạn chưa ứng tuyển công việc nào</p></>)
+}
+              
+           
+           
           </div>
 
           <div class="Manager_CV_Items_Company">

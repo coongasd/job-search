@@ -15,13 +15,14 @@ import {
   FaCog,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./style.css";
+
 
 function Header_CvCreate() {
   const dispatch = useDispatch();
-
+  
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo, loading, error } = userLogin;
+
   return (
     <div class="wrappar">
       <header>
@@ -35,7 +36,7 @@ function Header_CvCreate() {
           <div>
             <ul class="nav_links">
               <li>
-                <a href="#">
+                <a href="/">
                   <img src="images/logo.png" alt="logo"></img>
                 </a>
               </li>
@@ -45,7 +46,8 @@ function Header_CvCreate() {
                   <div>
                     <ul class="subnav_list">
                       <li>Tìm việc làm</li>
-                      <li>Việc làm đã ứng tuyển</li>
+                      <a href="/applied"><li>Việc làm đã ứng tuyển</li></a>
+                      <a href="/job/posted"><li>Việc làm đã đăng</li></a>
                       <li>Việc làm đã lưu</li>
                       <li>Việc làm phủ hợp</li>
                       <li>Việc làm từ xa</li>
@@ -105,6 +107,18 @@ function Header_CvCreate() {
           </div>
           <div>
             <ul class="nav_links">
+              {
+                userInfo?.userType === 'client' ? (
+                <>
+                <a href="/job/post">
+                  <li>
+                    <button className="m-0 bg-amber-600">Đăng tuyển</button>
+                  </li>
+                </a>
+               
+                </>) :(<></>)
+              }
+            
               <li>
                 <a href="#">
                   <img src="images/message.png" alt="logo"></img>
@@ -112,6 +126,7 @@ function Header_CvCreate() {
               </li>
               {(userInfo && (
                 <>
+                
                   <li class="nav_links_image name_user">
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_q8yprYUCumkTMHohLWFK6pXeIMCggV-aYyKrr4gjA"

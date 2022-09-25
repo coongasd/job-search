@@ -67,7 +67,7 @@ const submitHandler = (e) => {
         <br/>
         <div className='form mt-10'>
             <form onSubmit={submitHandler} className='text-left'>
-                <div className='left'>
+                <div className=''>
                     <div className='flex gap-8'>
                         <label className='font-bold'>Ảnh đại diện*</label>
                         <img src="../images/user.png" width="80" height="80"alt=""></img>

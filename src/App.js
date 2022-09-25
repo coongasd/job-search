@@ -19,6 +19,8 @@ import Contact from './component/CV_Contact/Contact'
 import PostJob from './component/Job/PostJob';
 import Company_Profile from './component/Company_Profile/Company_Profie';
 import Job_Apply from './component/CV_Create/Job_Apply';
+import JobPosted from './component/CV_Create/JobPosted';
+import JobCandidates from './component/CV_Create/JobCandidates';
 
 
 
@@ -27,6 +29,9 @@ function App() {
   return (
       <div className="App">
         <Routes>
+          <Route path="/job/candidates/:id/" element={<JobCandidates/>}/>
+          <Route path="/job/posted/" element={<JobPosted/>}/>
+          <Route path="/applied/" element={<Job_Apply/>}/>
           <Route path="/job/:id/" element={<JobDetails/>}/>
           <Route path="/job/post/" element={<PostJob/>}/>
           <Route path="/job/detail/" element={<JobDetails/>}/>
@@ -40,6 +45,8 @@ function App() {
           <Route path="/postjob" element={<PostJob/>}/>
           <Route path="/company" element={<Company_Profile/>}/>
           <Route path="/jobapply" element={<Job_Apply/>}/>
+          <Route path="/search/:keyword" element={<MainPage/>}/>
+          <Route path="/search/" element={<MainPage/>}/>
           <Route path="/" element={<MainPage/>}/>  
         </Routes>
       </div>
